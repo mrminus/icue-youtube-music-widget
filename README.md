@@ -2,7 +2,7 @@
 
 A **Now Playing** widget for Corsair iCUE LCDs (built and tested on the **Xeneon Edge**, vertical M / 696×840). It shows the current song, artist, album, album art, and playback progress, with **play/pause**, **next**, and **previous** controls.
 
-It reads from the [YTMDesktop2](https://github.com/ytmdesktop/ytmdesktop) companion API server exposed by YouTube Music Desktop.
+It reads from the [YTMDesktop2]((https://github.com/Venipa/ytmdesktop2)) companion API server exposed by YouTube Music Desktop.
 
 <p align="center">
   <img src="resources/screenshot.png" alt="YouTube Music iCUE widget — Now Playing" width="348" />
