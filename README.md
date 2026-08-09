@@ -26,7 +26,7 @@ It reads from the [YTMDesktop2](https://github.com/ytmdesktop/ytmdesktop) compan
 
 ## Install
 
-1. Download [`youtube-music.icuewidget`](youtube-music.icuewidget).
+1. Download the latest **`youtube-music.icuewidget`** from the [**Releases**](https://github.com/mrminus/icue-youtube-music-widget/releases/latest) page.
 2. In iCUE, import the widget file and add it to your LCD.
 3. Make sure YTMDesktop2's API server is running.
 
