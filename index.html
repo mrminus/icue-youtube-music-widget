@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>tr('YouTube Music')</title>
+  <link rel="icon" href="resources/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles/main.css" />
+
+  <meta name="x-icue-property" content="serverUrl" data-label="tr('Server URL')" data-type="textfield" data-default="'http://127.0.0.1:13091'" />
+  <meta name="x-icue-property" content="showAlbumArt" data-label="tr('Show Album Art')" data-type="switch" data-default="true" />
+  <meta name="x-icue-property" content="blurredBackground" data-label="tr('Blurred Art Background')" data-type="switch" data-default="true" />
+  <meta name="x-icue-property" content="showControls" data-label="tr('Show Controls')" data-type="switch" data-default="true" />
+  <meta name="x-icue-property" content="useDynamicAccent" data-label="tr('Accent From Album Art')" data-type="switch" data-default="true" />
+  <meta name="x-icue-property" content="accentColor" data-label="tr('Accent Color')" data-type="color" data-default="'#ff0033'" />
+  <meta name="x-icue-property" content="textColor" data-label="tr('Text Color')" data-type="color" data-default="'#ffffff'" />
+  <meta name="x-icue-property" content="backgroundColor" data-label="tr('Background')" data-type="color" data-default="'#0a0a0a'" />
+
+  <script id="x-icue-groups" type="application/json">
+  [
+    {
+      "title": "tr('YouTube Music')",
+      "properties": ["serverUrl", "showAlbumArt", "blurredBackground", "showControls"],
+      "info": "tr('Requires the YTMDesktop2 companion API server to be enabled.')"
+    },
+    {
+      "title": "tr('Widget Personalization')",
+      "properties": ["useDynamicAccent", "accentColor", "textColor", "backgroundColor"]
+    }
+  ]
+  </script>
+</head>
+<body>
+  <div id="bg"></div>
+  <div id="bg-scrim"></div>
+
+  <main id="content">
+    <section id="player">
+      <div id="art-wrap">
+        <img id="art" alt="" />
+        <div id="art-fallback" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="46%" height="46%"><path fill="currentColor" d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+        </div>
+      </div>
+
+      <div class="side">
+      <div id="meta">
+        <h1 id="title">YouTube Music</h1>
+        <p id="artist">Waiting for player…</p>
+      </div>
+
+      <div id="progress">
+        <div id="bar"><div id="bar-fill"></div></div>
+        <div id="times">
+          <span id="cur">0:00</span>
+          <span id="dur">0:00</span>
+        </div>
+      </div>
+
+      <div id="controls">
+        <button id="prev" class="ctl" type="button" aria-label="tr('Previous')">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+        </button>
+        <button id="toggle" class="ctl ctl-primary" type="button" aria-label="tr('Play / Pause')">
+          <svg id="icon-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+          <svg id="icon-pause" viewBox="0 0 24 24" hidden="hidden"><path fill="currentColor" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+        </button>
+        <button id="next" class="ctl" type="button" aria-label="tr('Next')">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
+        </button>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts/main.js"></script>
+  <script>
+    icueEvents = {
+      onICUEInitialized: function (payload) { onSettings(payload && payload.settings); startPolling(); },
+      onDataUpdated: function (payload) { onSettings(payload && payload.settings); }
+    };
+
+    if (typeof iCUE_initialized !== "undefined" && iCUE_initialized) {
+      onSettings();
+      startPolling();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "author": "Jason",
+  "id": "youtube-music-remote",
+  "name": "YouTube Music",
+  "description": "Now Playing for YouTube Music (YTMDesktop2 companion server): shows song, artist, album art, and progress with play/pause, next, and previous controls.",
+  "version": "1.0.0",
+  "preview_icon": "resources/icon.svg",
+  "min_app_version": "5.45",
+  "min_framework_version": "1.0.0",
+  "interactive": true,
+  "os": [
+    { "platform": "windows" }
+  ],
+  "supported_devices": [
+    { "type": "dashboard_lcd" },
+    { "type": "pump_lcd" },
+    { "type": "keyboard_lcd" }
+  ]
+}
