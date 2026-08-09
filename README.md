@@ -4,7 +4,9 @@ A **Now Playing** widget for Corsair iCUE LCDs (built and tested on the **Xeneon
 
 It reads from the [YTMDesktop2](https://github.com/ytmdesktop/ytmdesktop) companion API server exposed by YouTube Music Desktop.
 
-![Preview](resources/icon.svg)
+<p align="center">
+  <img src="resources/screenshot.png" alt="YouTube Music iCUE widget — Now Playing" width="348" />
+</p>
 
 ## Features
 

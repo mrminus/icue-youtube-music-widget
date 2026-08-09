@@ -83,6 +83,13 @@
     if (typeof iCUE_initialized !== "undefined" && iCUE_initialized) {
       onSettings();
       startPolling();
+    } else if (typeof iCUE_initialized === "undefined") {
+      // Not running inside iCUE (e.g. opened in a plain browser for testing):
+      // start with the built-in defaults so the widget still works.
+      window.addEventListener("DOMContentLoaded", function () {
+        onSettings();
+        startPolling();
+      });
     }
   </script>
 </body>
